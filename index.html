@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A client-side To-Do List application with CRUD operations, filtering, and localStorage persistence.">
+    <title>Task 3 | To-Do List</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main class="app" aria-labelledby="page-title">
+        <section class="todo-card">
+            <header class="app-header">
+                <p class="eyebrow">Thiranex Internship · Task 3</p>
+                <h1 id="page-title">My To-Do List</h1>
+                <p class="subtitle">Manage your tasks with CRUD, filters and automatic local storage.</p>
+            </header>
+
+            <form id="task-form" class="task-form">
+                <label class="sr-only" for="task-input">Enter a task</label>
+                <input
+                    id="task-input"
+                    name="task"
+                    type="text"
+                    placeholder="Enter a task..."
+                    maxlength="200"
+                    autocomplete="off"
+                    required
+                >
+                <button type="submit" class="add-btn">Add Task</button>
+            </form>
+
+            <div class="toolbar" aria-label="Task filters">
+                <div class="filters" role="group" aria-label="Filter tasks">
+                    <button type="button" class="filter-btn active" data-filter="all" aria-pressed="true">All</button>
+                    <button type="button" class="filter-btn" data-filter="active" aria-pressed="false">Active</button>
+                    <button type="button" class="filter-btn" data-filter="completed" aria-pressed="false">Completed</button>
+                </div>
+                <button type="button" id="clear-completed" class="text-btn">Clear completed</button>
+            </div>
+
+            <ul id="task-list" class="task-list" aria-live="polite" aria-label="To-do tasks"></ul>
+
+            <div id="empty-state" class="empty-state">
+                <span aria-hidden="true">✓</span>
+                <p>No tasks here yet.</p>
+            </div>
+
+            <footer class="app-footer">
+                <p id="task-count">0 tasks</p>
+                <button type="button" id="clear-all" class="danger-btn">Clear all</button>
+            </footer>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
